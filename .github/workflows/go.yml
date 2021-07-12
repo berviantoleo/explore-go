@@ -19,7 +19,6 @@ jobs:
     #   run: go test -v ./...
   docker-build:
     needs: build
-    steps:
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
