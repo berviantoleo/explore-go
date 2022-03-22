@@ -7,8 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    matrix:
-      go: ["1.16", "1.17"]
+    strategy:
+      matrix:
+        go: ["1.16", "1.17"]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Go
