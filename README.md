@@ -6,4 +6,4 @@ Part of this post: ![Dev.to](https://dev.to/aws-builders/lets-get-started-with-e
 
 ## License
 
-MIT
+BSD 3-Clause
