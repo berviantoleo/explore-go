@@ -58,12 +58,14 @@ func UploadToS3(c echo.Context, filename string, src multipart.File) (string, er
 	return result.Location, nil
 }
 
+func HelloWorld(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello, World!")
+}
+
 func main() {
 	e := echo.New()
 	e.Use(middleware.Logger())
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	e.GET("/", HelloWorld)
 	e.POST("/upload", upload)
 
 	e.Logger.Fatal(e.Start(":1323"))

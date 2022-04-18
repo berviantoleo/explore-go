@@ -23,7 +23,8 @@ jobs:
     - name: Build
       run: go build
     - name: Test
-      run: go test
+      run: go test ./... -covermode=atomic -coverprofile cover.out
+    - uses: codecov/codecov-action@v2
   docker-test:
     runs-on: ubuntu-20.04
     if: github.event_name == 'pull_request'
