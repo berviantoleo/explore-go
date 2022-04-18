@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        go: ["1.16", "1.17"]
+        go: ["1.16", "1.17", "1.18"]
     steps:
     - uses: actions/checkout@v3
     - name: Set up Go
@@ -21,9 +21,9 @@ jobs:
     - name: Setup dependencies
       run: go get
     - name: Build
-      run: go build
+      run: go build -buildvcs=false
     - name: Test
-      run: go test
+      run: go test -buildvcs=false
   docker-test:
     runs-on: ubuntu-20.04
     if: github.event_name == 'pull_request'
