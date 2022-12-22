@@ -6,10 +6,10 @@ on:
     branches: [ main ]
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        go: ["1.17", "1.18", "1.19"]
+        go: ["1.18", "1.19"]
     steps:
     - uses: actions/checkout@v3
     - name: Set up Go
@@ -26,14 +26,14 @@ jobs:
       run: go test ./... -covermode=atomic -coverprofile cover.out
     - uses: codecov/codecov-action@v3
   docker-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v3
       - run: docker build . -t explore-go-test
   docker-build:
     needs: build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
