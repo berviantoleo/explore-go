@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/feature/s3/manager v1.11.53
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.30.3
 	github.com/labstack/echo/v4 v4.10.2
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 )
 
 require (
