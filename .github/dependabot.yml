@@ -14,7 +14,8 @@ updates:
       interval: "weekly"
     groups:
       awssdk:
-        patterns: *aws-sdk*
+        patterns: 
+          - *aws-sdk*
  
   - package-ecosystem: "docker"
     directory: "/"
